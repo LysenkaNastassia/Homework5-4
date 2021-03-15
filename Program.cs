@@ -23,23 +23,26 @@ namespace Homework5_4_
             for (int y = 0; y < height; y++)
             {
                 int max = 0;
+                int maxIndex = -1;
                 for (int x = 0; x < width; x++)
                 {
                     if (arr[y, x] > max)
                     {
                         max = arr[y, x];
-                        
+                        maxIndex = x;
+
                     }
                     
                 }
                       
                 for (int x = 0; x < width; x++)
                 {
-                    if (arr[y, x]<max) 
+                    if (x<=maxIndex) 
                     {
-                        arr[y, x] = 0;
+                        Console.Write(arr[y, x] + "  ");
                     }
-                    Console.Write(arr[y, x] + "  ");
+                    else
+                    Console.Write(0 + "  ");
                 }
                 Console.WriteLine();
             }
